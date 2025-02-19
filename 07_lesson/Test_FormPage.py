@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.alert import Alert
-from FormPage import FormPage
+from formPage import FormPage
 
 import pytest
 
@@ -17,16 +17,16 @@ def driver():
 
 def test_input (driver):
     form = FormPage (driver)
-    form.search_first_name ("Иван")
-    form.search_last_name ("Петров")
-    form.search_adress ("Ленина, 55-3")
-    form.search_email ("test@skypro.com")
-    form.search_phone ("+7985899998787")
-    form.search_country ("Россия")
-    form.search_city ("Москва")
-    form.search_job ("QA")
-    form.search_company ("SkyPro")
-    form.search_subbmit ()
+    form.input_first_name ("Иван")
+    form.input_last_name ("Петров")
+    form.input_adress ("Ленина, 55-3")
+    form.input_email ("test@skypro.com")
+    form.input_phone ("+7985899998787")
+    form.input_country ("Россия")
+    form.input_city ("Москва")
+    form.input_job ("QA")
+    form.input_company ("SkyPro")
+    form.click_subbmit ()
     
     
     assert "success" in form.search_first_name_res ()
